@@ -5,7 +5,6 @@ from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QImage, QPalette, QBrush
 
 
-
 class Gui(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
