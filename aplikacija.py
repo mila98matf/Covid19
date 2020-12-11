@@ -12,7 +12,7 @@ class Gui(QtWidgets.QWidget):
         self.show()
 
     def initGui(self):
-
+  #komentar
 
 
 app = QtWidgets.QApplication([])
