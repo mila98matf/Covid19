@@ -139,8 +139,8 @@ class Gui(QtWidgets.QWidget):
 
         hboxDisanje = QtWidgets.QHBoxLayout()
         ldisanje = QtWidgets.QLabel("Teskoce pri disanju ili nedostatak daha: ")
-        rbDisanje1 = QtWidgets.QRadioButton("da")
-        rbDisanje2 = QtWidgets.QRadioButton("ne")
+        rbDisanje1 = QtWidgets.QRadioButton("Da")
+        rbDisanje2 = QtWidgets.QRadioButton("Ne")
         hboxDisanje.addWidget(ldisanje)
         hboxDisanje.addWidget(rbDisanje1)
         hboxDisanje.addWidget(rbDisanje2)
@@ -148,8 +148,8 @@ class Gui(QtWidgets.QWidget):
 
         hboxPritisak = QtWidgets.QHBoxLayout()
         lpritisak = QtWidgets.QLabel("Bol ili pritisak u grudima: ")
-        rbPritisak1 = QtWidgets.QRadioButton("da")
-        rbPritisak2 = QtWidgets.QRadioButton("ne")
+        rbPritisak1 = QtWidgets.QRadioButton("Da")
+        rbPritisak2 = QtWidgets.QRadioButton("Ne")
         hboxPritisak.addWidget(lpritisak)
         hboxPritisak.addWidget(rbPritisak1)
         hboxPritisak.addWidget(rbPritisak2)
@@ -161,8 +161,8 @@ class Gui(QtWidgets.QWidget):
 
         hboxPoz = QtWidgets.QHBoxLayout()
         lpoz = QtWidgets.QLabel("Da li ste bili u kontaktu sa osobom koja je pozitivna na Covid-19? ")
-        rbPoz1 = QtWidgets.QRadioButton("da")
-        rbPoz2 = QtWidgets.QRadioButton("ne")
+        rbPoz1 = QtWidgets.QRadioButton("Da")
+        rbPoz2 = QtWidgets.QRadioButton("Ne")
         hboxPoz.addWidget(lpoz)
         hboxPoz.addWidget(rbPoz1)
         hboxPoz.addWidget(rbPoz2)
@@ -170,8 +170,8 @@ class Gui(QtWidgets.QWidget):
 
         hboxSim = QtWidgets.QHBoxLayout()
         lsim = QtWidgets.QLabel("Da li ste bili u kontaktu sa osobom koja\n ima simptome Covida-19 ali se nije testirala? ")
-        rbSim1 = QtWidgets.QRadioButton("da")
-        rbSim2 = QtWidgets.QRadioButton("ne")
+        rbSim1 = QtWidgets.QRadioButton("Da")
+        rbSim2 = QtWidgets.QRadioButton("Ne")
         hboxSim.addWidget(lsim)
         hboxSim.addWidget(rbSim1)
         hboxSim.addWidget(rbSim2)
