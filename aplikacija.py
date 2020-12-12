@@ -369,6 +369,80 @@ class Gui(QtWidgets.QWidget):
         
     def ukupno(self):
         n=0
+        if rVak1.isChecked():
+            n+=0
+        elif rVak2.isChecked():
+            n+=5
+        elif rVak3.isChecked():
+            n+=10
+        else:
+            self.greska()
+        
+        
+        #alergija
+        if rAlergija1.isChecked():
+            n+=5
+        elif rAlergija2.isChecked():
+            n+=5
+        #infekcija
+        if rInfekcija1.isChecked():
+            n+=50
+        elif rInfekcija2.isChecked():
+            n+=30
+        elif rInfekcija3.isChecked():
+            n+=30
+        #diabetes
+        if rDiabetes1.isChecked():
+            n+=40
+        elif rDiabetes2.isChecked():
+            n+=0
+        else: 
+            self.greska()
+        #hipertenzija
+        if rHiper1.isChecked():
+            n+=10
+        elif rHiper2.isChecked():
+            n+=0
+        else: 
+            self.greska()
+        #hipotenzija
+        if rHipo1.isChecked():
+            n+=10
+        elif rHipo2.isChecked():
+            n+=0
+        else: 
+            self.greska()
+
+        #astma
+        if rAstma1.isChecked():
+            n+=50
+        elif rAstma2.isChecked():
+            n+=40
+        elif rAstma3.isChecked():
+            n+=30
+        elif rAstma4.isChecked():
+            n+=10
+        elif rAstma5.isChecked():
+            n+=0
+        else: 
+            self.greska()
+        
+        #cigarete
+        if rCig1.isChecked():
+            n+=0
+        elif rCig2.isChecked():
+            n+=5
+        elif rCig3.isChecked():
+            n+=10
+        elif rCig4.isChecked():
+            n+=15
+        elif rCig5.isChecked():
+            n+=20
+        else: 
+            self.greska()
+        
+        
+        
          if rtemp1.isChecked():
             n+=0
         elif rtemp2.isChecked():
