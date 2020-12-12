@@ -368,6 +368,7 @@ class Gui(QtWidgets.QWidget):
         vbox.addLayout(hboxKraj)
         
         self.pbGotovo.clicked.connect(self.ukupno)
+        self.pbPonovo.clicked.connect(self.brisi)
         
     def ukupno(self):
         n=0
@@ -549,6 +550,85 @@ class Gui(QtWidgets.QWidget):
         else:
             self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, ne postoje indicije da ste zarazeni virusom COVID-19, zdravlje Vam je stabilno, ali zarad sigurnosti Vas i ljudi u Vasem okruzenju, cuvajte svoje zdravlje i budite odgovorni! ")
         
+    def brisi(self):
+        self.tGodine.setText("")
+        self.time.setText("")
+
+        self.grVak.setExclusive(False)
+        self.rVak1.setChecked(False)
+        self.rVak2.setChecked(False)
+        self.rVak3.setChecked(False)
+        self.grVak.setExclusive(True)
+
+        self.grAlergija1.setExclusive(False)
+        self.rAlergija1.setChecked(False)
+        self.grAlergija1.setExclusive(True)
+        self.grAlergija2.setExclusive(False)
+        self.rAlergija2.setChecked(False)
+        self.grAlergija2(True)
+
+        self.grInfekcija1.setExclusive(False)
+        self.rInfekcija1.setChecked(False)
+        self.grInfekcija1.setExclusive(True)
+        self.grInfekcija2.setExclusive(False)
+        self.rInfekcija2.setChecked(False)
+        self.grInfekcija2.setExclusive(True)
+        self.grInfekcija3.setExclusive(False)
+        self.rInfekcija3.setChecked(False)
+        self.grInfekcija3.setExclusive(True)
+
+        self.grDiabetes.setExclusive(False)
+        self.rDiabetes1.setChecked(False)
+        self.rDiabetes2.setChecked(False)
+        self.grDiabetes.setExclusive(True)
+
+        self.grHipertenzija.setExclusive(False)
+        self.rHiper1.setChecked(False)
+        self.rHiper2.setChecked(False)
+        self.grHipertenzija.setExclusive(True)
+
+        self.grHipotenzija.setExclusive(False)
+        self.rHipo1.setChecked(False)
+        self.rHipo2.setChecked(False)
+        self.grHipotenzija.setExclusive(True)
+
+        self.grAstma.setExclusive(False)
+        self.rAstma1.setChecked(False)
+        self.rAstma2.setChecked(False)
+        self.rAstma3.setChecked(False)
+        self.rAstma4.setChecked(False)
+        self.rAstma5.setChecked(False)
+        self.grAstma.setExclusive(True)
+
+        self.grCig.setExclusive(False)
+        self.rCig1.setChecked(False)
+        self.rCig2.setChecked(False)
+        self.rCig3.setChecked(False)
+        self.rCig4.setChecked(False)
+        self.rCig5.setChecked(False)
+        self.grCig.setExclusive(True)
+        
+        #ovde dodati Jovanin deo
+
+        self.grDisanje.setExclusive(False)
+        self.rbDisanje1.setChecked(False)
+        self.rbDisanje2.setChecked(False)
+        self.grDisanje.setExclusive(True)
+
+        self.grPritisak.setExclusive(False)
+        self.rbPritisak1.setChecked(False)
+        self.rbPritisak2.setChecked(False)
+        self.grPritisak.setExclusive(True)
+
+        self.grPoz.setExclusive(False)
+        self.rbPoz1.setChecked(False)
+        self.rbPoz2.setChecked(False)
+        self.grPoz.setExclusive(True)
+
+        self.grSim.setExclusive(False)
+        self.rbSim1.setChecked(False)
+        self.rbSim2.setChecked(False)
+        self.grSim.setExclusive(True)
     
     def greska(self, naziv):
         alert=QtWidgets.QMessageBox()
