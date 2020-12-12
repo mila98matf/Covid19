@@ -68,7 +68,6 @@ class Gui(QtWidgets.QWidget):
 
         #teske infekcije
         hboxInfekcija = QtWidgets.QHBoxLayout()
-        vboxInfekcija2= QtWidgets.QVBoxLayout()
         lInfekcije= QLabel("Da li ste imali neke od teskih infekcija: ")
         self.rInfekcija1= QtWidgets.QRadioButton("pneumonija (upala pluca)")
         self.rInfekcija2= QtWidgets.QRadioButton("meningitis (upala mozga)")
@@ -80,10 +79,9 @@ class Gui(QtWidgets.QWidget):
         grInfekcija3 = QtWidgets.QButtonGroup(self)
         grInfekcija3.addButton(self.rInfekcija3)
         hboxInfekcija.addWidget(lInfekcije)
-        vboxInfekcija2.addWidget(self.rInfekcija1)
-        vboxInfekcija2.addWidget(self.rInfekcija2)
-        vboxInfekcija2.addWidget(self.rInfekcija3)
-        hboxInfekcija.addLayout(vboxInfekcija2)
+        hboxInfekcija.addWidget(self.rInfekcija1)
+        hboxInfekcija.addWidget(self.rInfekcija2)
+        hboxInfekcija.addWidget(self.rInfekcija3)
         vbox.addLayout(hboxInfekcija)
 
         #diabetes
@@ -127,7 +125,6 @@ class Gui(QtWidgets.QWidget):
 
         #astma
         hboxAstma = QtWidgets.QHBoxLayout()
-        vboxAstma2= QtWidgets.QVBoxLayout()
         lAstma= QLabel("Da li imate astmu (ako da, koliko cesto): ")
         self.rAstma1= QtWidgets.QRadioButton("dnevno vise puta")
         self.rAstma2= QtWidgets.QRadioButton("jednom dnevno")
@@ -141,17 +138,15 @@ class Gui(QtWidgets.QWidget):
         grAstma.addButton(self.rAstma4)
         grAstma.addButton(self.rAstma5)
         hboxAstma.addWidget(lAstma)
-        vboxAstma2.addWidget(self.rAstma1)
-        vboxAstma2.addWidget(self.rAstma2)
-        vboxAstma2.addWidget(self.rAstma3)
-        vboxAstma2.addWidget(self.rAstma4)
-        vboxAstma2.addWidget(self.rAstma5)
-        hboxAstma.addLayout(vboxAstma2)
+        hboxAstma.addWidget(self.rAstma1)
+        hboxAstma.addWidget(self.rAstma2)
+        hboxAstma.addWidget(self.rAstma3)
+        hboxAstma.addWidget(self.rAstma4)
+        hboxAstma.addWidget(self.rAstma5)
         vbox.addLayout(hboxAstma)
 
         #cigarete
         hboxCigarete = QtWidgets.QHBoxLayout()
-        vboxCigarete2= QtWidgets.QVBoxLayout()
         lCigarete= QLabel("Da li pusite cigarete (ako da, koliko cigareta dnevno): ")
         self.rCig1= QtWidgets.QRadioButton("ne")
         self.rCig2= QtWidgets.QRadioButton("od 1 do 5 dnevno")
@@ -165,12 +160,11 @@ class Gui(QtWidgets.QWidget):
         grCig.addButton(self.rCig4)
         grCig.addButton(self.rCig5)
         hboxCigarete.addWidget(lCigarete)
-        vboxCigarete2.addWidget(self.rCig1)
-        vboxCigarete2.addWidget(self.rCig2)
-        vboxCigarete2.addWidget(self.rCig3)
-        vboxCigarete2.addWidget(self.rCig4)
-        vboxCigarete2.addWidget(self.rCig5)
-        hboxCigarete.addLayout(vboxCigarete2)
+        hboxCigarete.addWidget(self.rCig1)
+        hboxCigarete.addWidget(self.rCig2)
+        hboxCigarete.addWidget(self.rCig3)
+        hboxCigarete.addWidget(self.rCig4)
+        hboxCigarete.addWidget(self.rCig5)
         vbox.addLayout(hboxCigarete)
 
         self.simptomi = QLabel("SIMPTOMI", self)  
