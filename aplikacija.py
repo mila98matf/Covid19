@@ -280,7 +280,7 @@ class Gui(QtWidgets.QWidget):
         lcula = QLabel("Gubitak cula mirisa ili ukusa: ")
         self.rcula1 = QtWidgets.QRadioButton("Cubitak cula mirisa")
         self.rcula2 = QtWidgets.QRadioButton("Gubitak cula ukusa")
-        rcula3 = QtWidgets.QRadioButton("Nije doslo do gubitka cula mirisa ili ukusa")
+        self.rcula3 = QtWidgets.QRadioButton("Nije doslo do gubitka cula mirisa ili ukusa")
         bgC1 = QButtonGroup(self)
         bgC1.addButton(self.rcula1)
         bgC2 = QButtonGroup(self)
@@ -307,8 +307,8 @@ class Gui(QtWidgets.QWidget):
         grDisanje.addButton(self.rbDisanje1)
         grDisanje.addButton(self.rbDisanje2)
         hboxDisanje.addWidget(ldisanje)
-        hboxDisanje.addWidget(rbDisanje1)
-        hboxDisanje.addWidget(rbDisanje2)
+        hboxDisanje.addWidget(self.rbDisanje1)
+        hboxDisanje.addWidget(self.rbDisanje2)
         vbox.addLayout(hboxDisanje)
 
         hboxPritisak = QtWidgets.QHBoxLayout()
@@ -364,7 +364,7 @@ class Gui(QtWidgets.QWidget):
         vbox.addWidget(self.lprocena)
         vbox.addWidget(self.leprocena)
         
-        pbGotovo.clicked.connect(self.ukupno)
+        self.pbGotovo.clicked.connect(self.ukupno)
         
     def ukupno(self):
         n=0
