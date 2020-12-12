@@ -301,11 +301,11 @@ class Gui(QtWidgets.QWidget):
 
         hboxDisanje = QtWidgets.QHBoxLayout()
         ldisanje = QtWidgets.QLabel("Teskoce pri disanju ili nedostatak daha: ")
-        rbDisanje1 = QtWidgets.QRadioButton("Da")
-        rbDisanje2 = QtWidgets.QRadioButton("Ne")
+        self.rbDisanje1 = QtWidgets.QRadioButton("Da")
+        self.rbDisanje2 = QtWidgets.QRadioButton("Ne")
         grDisanje = QtWidgets.QButtonGroup(self)
-        grDisanje.addButton(rbDisanje1)
-        grDisanje.addButton(rbDisanje2)
+        grDisanje.addButton(self.rbDisanje1)
+        grDisanje.addButton(self.rbDisanje2)
         hboxDisanje.addWidget(ldisanje)
         hboxDisanje.addWidget(rbDisanje1)
         hboxDisanje.addWidget(rbDisanje2)
@@ -313,14 +313,14 @@ class Gui(QtWidgets.QWidget):
 
         hboxPritisak = QtWidgets.QHBoxLayout()
         lpritisak = QtWidgets.QLabel("Bol ili pritisak u grudima: ")
-        rbPritisak1 = QtWidgets.QRadioButton("Da")
-        rbPritisak2 = QtWidgets.QRadioButton("Ne")
+        self.rbPritisak1 = QtWidgets.QRadioButton("Da")
+        self.rbPritisak2 = QtWidgets.QRadioButton("Ne")
         grPritisak = QtWidgets.QButtonGroup(self)
-        grPritisak.addButton(rbPritisak1)
-        grPritisak.addButton(rbPritisak2)
+        grPritisak.addButton(self.rbPritisak1)
+        grPritisak.addButton(self.rbPritisak2)
         hboxPritisak.addWidget(lpritisak)
-        hboxPritisak.addWidget(rbPritisak1)
-        hboxPritisak.addWidget(rbPritisak2)
+        hboxPritisak.addWidget(self.rbPritisak1)
+        hboxPritisak.addWidget(self.rbPritisak2)
         vbox.addLayout(hboxPritisak)
 
         #kontakti
@@ -329,41 +329,40 @@ class Gui(QtWidgets.QWidget):
 
         hboxPoz = QtWidgets.QHBoxLayout()
         lpoz = QtWidgets.QLabel("Da li ste bili u kontaktu sa osobom koja je pozitivna na Covid-19? ")
-        rbPoz1 = QtWidgets.QRadioButton("Da")
-        rbPoz2 = QtWidgets.QRadioButton("Ne")
+        self.rbPoz1 = QtWidgets.QRadioButton("Da")
+        self.rbPoz2 = QtWidgets.QRadioButton("Ne")
         grPoz = QtWidgets.QButtonGroup(self)
-        grPoz.addButton(rbPoz1)
-        grPoz.addButton(rbPoz2)
+        grPoz.addButton(self.rbPoz1)
+        grPoz.addButton(self.rbPoz2)
         hboxPoz.addWidget(lpoz)
-        hboxPoz.addWidget(rbPoz1)
-        hboxPoz.addWidget(rbPoz2)
+        hboxPoz.addWidget(self.rbPoz1)
+        hboxPoz.addWidget(self.rbPoz2)
         vbox.addLayout(hboxPoz)
 
         hboxSim = QtWidgets.QHBoxLayout()
         lsim = QtWidgets.QLabel("Da li ste bili u kontaktu sa osobom koja\n ima simptome Covida-19 ali se nije testirala? ")
-        rbSim1 = QtWidgets.QRadioButton("Da")
-        rbSim2 = QtWidgets.QRadioButton("Ne")
+        self.rbSim1 = QtWidgets.QRadioButton("Da")
+        self.rbSim2 = QtWidgets.QRadioButton("Ne")
         grSim = QtWidgets.QButtonGroup(self)
-        grSim.addButton(rbSim1)
-        grSim.addButton(rbSim2)
+        grSim.addButton(self.rbSim1)
+        grSim.addButton(self.rbSim2)
         hboxSim.addWidget(lsim)
-        hboxSim.addWidget(rbSim1)
-        hboxSim.addWidget(rbSim2)
+        hboxSim.addWidget(self.rbSim1)
+        hboxSim.addWidget(self.rbSim2)
         vbox.addLayout(hboxSim)
 
         #kraj
         hboxKraj = QtWidgets.QHBoxLayout()
-        pbGotovo = QtWidgets.QPushButton("Gotovo")
-        pbPonovo = QtWidgets.QPushButton("Pocni ispocetka")
-        hboxKraj.addWidget(pbGotovo)
-        hboxKraj.addWidget(pbPonovo)
+        self.pbGotovo = QtWidgets.QPushButton("Gotovo")
+        self.pbPonovo = QtWidgets.QPushButton("Pocni ispocetka")
+        hboxKraj.addWidget(self.pbGotovo)
+        hboxKraj.addWidget(self.pbPonovo)
         vbox.addLayout(hboxKraj)
 
-        lprocena = QtWidgets.QLabel("Procena: ")
-        leprocena = QtWidgets.QLineEdit()
-        leprocena.resize(900,100)
-        vbox.addWidget(lprocena)
-        vbox.addWidget(leprocena)
+        self.lprocena = QtWidgets.QLabel("Procena: ")
+        self.leprocena = QtWidgets.QLineEdit()
+        vbox.addWidget(self.lprocena)
+        vbox.addWidget(self.leprocena)
         
         pbGotovo.clicked.connect(self.ukupno)
         
@@ -503,41 +502,41 @@ class Gui(QtWidgets.QWidget):
         else:
             self.greska()
         #teski
-        if rbDisanje1.isChecked():
+        if self.rbDisanje1.isChecked():
             n+=150
-        elif rbDisanje2.isChecked():
+        elif self.rbDisanje2.isChecked():
             n+=0
         else:
             self.greska()
         
-        if rbPritisak1.isChecked():
+        if self.rbPritisak1.isChecked():
             n+=150
-        elif rbPritisak2.isChecked():
+        elif self.rbPritisak2.isChecked():
             n+=0
         else:
             self.greska()
 
         #kontakti
-        if rbPoz1.isChecked():
+        if self.rbPoz1.isChecked():
             n+=200
-        elif rbPoz2.isChecked():
+        elif self.rbPoz2.isChecked():
             n+=0
         else:
             self.greska()
 
-        if rbSim1.isChecked():
+        if self.rbSim1.isChecked():
             n+=200
-        elif rbSim2.isChecked():
+        elif self.rbSim2.isChecked():
             n+=0
         else:
             self.greska()
 
         if n>=300:
-            leprocena.setText("Doktor")
+            self.leprocena.setText("Doktor")
         elif n>=70:
-            leprocena.setText("Kucno")
+            self.leprocena.setText("Kucno")
         else:
-            leprocena.setText("OK")
+            self.leprocena.setText("OK")
         
     
     def greska(self):
