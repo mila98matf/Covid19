@@ -134,11 +134,11 @@ class Gui(QtWidgets.QWidget):
         vbox.addLayout(hboxC)
         
         #teski simptomi
-        lteski = QtWidgets.QLabel("TEŠKI SIMPTOMI")
+        lteski = QtWidgets.QLabel("Teski simptomi")
         vbox.addWidget(lteski)
 
         hboxDisanje = QtWidgets.QHBoxLayout()
-        ldisanje = QtWidgets.QLabel("Teškoće pri disanju ili nedostatak daha: ")
+        ldisanje = QtWidgets.QLabel("Teskoce pri disanju ili nedostatak daha: ")
         rbDisanje1 = QtWidgets.QRadioButton("da")
         rbDisanje2 = QtWidgets.QRadioButton("ne")
         hboxDisanje.addWidget(ldisanje)
@@ -180,7 +180,7 @@ class Gui(QtWidgets.QWidget):
         #kraj
         hboxKraj = QtWidgets.QHBoxLayout()
         pbGotovo = QtWidgets.QPushButton("Gotovo")
-        pbPonovo = QtWidgets.QPushButton("Počni ispočetka")
+        pbPonovo = QtWidgets.QPushButton("Pocni ispocetka")
         hboxKraj.addWidget(pbGotovo)
         hboxKraj.addWidget(pbPonovo)
         vbox.addLayout(hboxKraj)
