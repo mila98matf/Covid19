@@ -360,11 +360,6 @@ class Gui(QtWidgets.QWidget):
         hboxKraj.addWidget(self.pbGotovo)
         hboxKraj.addWidget(self.pbPonovo)
         vbox.addLayout(hboxKraj)
-
-        self.lprocena = QtWidgets.QLabel("Procena: ")
-        self.leprocena = QtWidgets.QLineEdit()
-        vbox.addWidget(self.lprocena)
-        vbox.addWidget(self.leprocena)
         
         self.pbGotovo.clicked.connect(self.ukupno)
         
@@ -541,12 +536,12 @@ class Gui(QtWidgets.QWidget):
         else:
             self.greska("simptomi")
 
-        if n>=300:
-            self.leprocena.setText("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, savetujemo Vam da se javite lekaru radi dalje kontrole i lecenja jer postoje indicije da ste zarazeni virusom COVID-19!")
+       if n>=300:
+            self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, savetujemo Vam da se javite lekaru radi dalje kontrole i lecenja jer postoje indicije da ste zarazeni virusom COVID-19!")
         elif n>=70:
-            self.leprocena.setText("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, nije neophodno obracanje lekaru radi daljeg lecenja, vec je dovoljno da ostanete kod kuce, uzimate vitamine, cuvate svoje zdravlje i izbegavate kontakt sa drugim ljudima.")
+            self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, nije neophodno obracanje lekaru radi daljeg lecenja, vec je dovoljno da ostanete kod kuce, uzimate vitamine, cuvate svoje zdravlje i izbegavate kontakt sa drugim ljudima.")
         else:
-            self.leprocena.setText("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, ne postoje indicije da ste zarazeni virusom COVID-19, zdravlje Vam je stabilno, ali zarad sigurnosti Vas i ljudi u Vasem okruzenju, cuvajte svoje zdravlje i budite odgovorni! ")
+            self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, ne postoje indicije da ste zarazeni virusom COVID-19, zdravlje Vam je stabilno, ali zarad sigurnosti Vas i ljudi u Vasem okruzenju, cuvajte svoje zdravlje i budite odgovorni! ")
         
     
     def greska(self, naziv):
@@ -554,6 +549,13 @@ class Gui(QtWidgets.QWidget):
         alert.setWindowTitle("Poruka")
         alert.setText(naziv)
         alert.move(250,250)
+        alert.exec_()
+        
+     def preporucujemo(self, naziv):
+        alert=QtWidgets.QMessageBox()
+        alert.setWindowTitle("Preporucujemo")
+        alert.setText(naziv)
+        alert.move(450,450)
         alert.exec_()
 
 
