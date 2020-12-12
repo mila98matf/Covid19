@@ -26,7 +26,7 @@ class Gui(QtWidgets.QWidget):
         self.setLayout(vbox)
         
         #dodajemo sliku u pozadini
-        oImage = QImage("2.jpeg")
+        oImage = QImage("4.jpeg")
         sImage = oImage.scaled(QSize(500,500))                   
         palette = QPalette()
         palette.setBrush(QPalette.Window, QBrush(sImage))
