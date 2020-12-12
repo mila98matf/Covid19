@@ -31,121 +31,121 @@ class Gui(QtWidgets.QWidget):
         #goidne
         hbox1 = QtWidgets.QHBoxLayout()
         lGodine= QLabel("Uneti broj godina: ")
-        tGodine= QtWidgets.QLineEdit()
+        self.tGodine= QtWidgets.QLineEdit()
         hbox1.addWidget(lGodine)
-        hbox1.addWidget(tGodine)
+        hbox1.addWidget(self.tGodine)
         vbox.addLayout(hbox1)
         
         #vakcinacija
         hboxVak = QtWidgets.QHBoxLayout()
         lVakcinacija= QLabel("Da li ste vakcinisani: ")
-        rVak1= QtWidgets.QRadioButton("Jesam od svih")
-        rVak2= QtWidgets.QRadioButton("Nisam od svih vakcina koje su bile potrebne")
-        rVak3= QtWidgets.QRadioButton("Nisam uopste")
+        self.rVak1= QtWidgets.QRadioButton("Jesam od svih")
+        self.rVak2= QtWidgets.QRadioButton("Nisam od svih vakcina koje su bile potrebne")
+        self.rVak3= QtWidgets.QRadioButton("Nisam uopste")
         grVak = QtWidgets.QButtonGroup(self)
-        grVak.addButton(rVak1)
-        grVak.addButton(rVak2)
-        grVak.addButton(rVak3)
+        grVak.addButton(self.rVak1)
+        grVak.addButton(self.rVak2)
+        grVak.addButton(self.rVak3)
         hboxVak.addWidget(lVakcinacija)
-        hboxVak.addWidget(rVak1)
-        hboxVak.addWidget(rVak2)
-        hboxVak.addWidget(rVak3)
+        hboxVak.addWidget(self.rVak1)
+        hboxVak.addWidget(self.rVak2)
+        hboxVak.addWidget(self.rVak3)
         vbox.addLayout(hboxVak)
 
         #alergija
         hboxAlergija = QtWidgets.QHBoxLayout()
         lAlergija= QLabel("Da li ste alergicni: ")
-        rAlergija1= QtWidgets.QRadioButton("na neku vrstu hrane")
-        rAlergija2= QtWidgets.QRadioButton("na neku vrstu leka")
+        self.rAlergija1= QtWidgets.QRadioButton("na neku vrstu hrane")
+        self.rAlergija2= QtWidgets.QRadioButton("na neku vrstu leka")
         grAlergija1 = QtWidgets.QButtonGroup(self)
-        grAlergija1.addButton(rAlergija1)
+        grAlergija1.addButton(self.rAlergija1)
         grAlergija2 = QtWidgets.QButtonGroup(self)
-        grAlergija2.addButton(rAlergija2)
+        grAlergija2.addButton(self.rAlergija2)
         hboxAlergija.addWidget(lAlergija)
-        hboxAlergija.addWidget(rAlergija1)
-        hboxAlergija.addWidget(rAlergija2)
+        hboxAlergija.addWidget(self.rAlergija1)
+        hboxAlergija.addWidget(self.rAlergija2)
         vbox.addLayout(hboxAlergija)
 
         #teske infekcije
         hboxInfekcija = QtWidgets.QHBoxLayout()
         vboxInfekcija2= QtWidgets.QVBoxLayout()
         lInfekcije= QLabel("Da li ste imali neke od teskih infekcija: ")
-        rInfekcija1= QtWidgets.QRadioButton("pneumonija (upala pluca)")
-        rInfekcija2= QtWidgets.QRadioButton("meningitis (upala mozga)")
-        rInfekcija3= QtWidgets.QRadioButton("endokarditis (upala srca)")
+        self.rInfekcija1= QtWidgets.QRadioButton("pneumonija (upala pluca)")
+        self.rInfekcija2= QtWidgets.QRadioButton("meningitis (upala mozga)")
+        self.rInfekcija3= QtWidgets.QRadioButton("endokarditis (upala srca)")
         grInfekcija1 = QtWidgets.QButtonGroup(self)
-        grInfekcija1.addButton(rInfekcija1)
+        grInfekcija1.addButton(self.rInfekcija1)
         grInfekcija2 = QtWidgets.QButtonGroup(self)
-        grInfekcija2.addButton(rInfekcija2)
+        grInfekcija2.addButton(self.rInfekcija2)
         grInfekcija3 = QtWidgets.QButtonGroup(self)
-        grInfekcija3.addButton(rInfekcija3)
+        grInfekcija3.addButton(self.rInfekcija3)
         hboxInfekcija.addWidget(lInfekcije)
-        vboxInfekcija2.addWidget(rInfekcija1)
-        vboxInfekcija2.addWidget(rInfekcija2)
-        vboxInfekcija2.addWidget(rInfekcija3)
+        vboxInfekcija2.addWidget(self.rInfekcija1)
+        vboxInfekcija2.addWidget(self.rInfekcija2)
+        vboxInfekcija2.addWidget(self.rInfekcija3)
         hboxInfekcija.addLayout(vboxInfekcija2)
         vbox.addLayout(hboxInfekcija)
 
         #diabetes
         hboxDiabetes = QtWidgets.QHBoxLayout()
         lDiabetes= QLabel("Da li imate diabetes: ")
-        rDiabetes1= QtWidgets.QRadioButton("Da")
-        rDiabetes2= QtWidgets.QRadioButton("Ne")
+        self.rDiabetes1= QtWidgets.QRadioButton("Da")
+        self.rDiabetes2= QtWidgets.QRadioButton("Ne")
         grDiabetes = QtWidgets.QButtonGroup(self)
-        grDiabetes.addButton(rDiabetes1)
-        grDiabetes.addButton(rDiabetes2)
+        grDiabetes.addButton(self.rDiabetes1)
+        grDiabetes.addButton(self.rDiabetes2)
         hboxDiabetes.addWidget(lDiabetes)
-        hboxDiabetes.addWidget(rDiabetes1)
-        hboxDiabetes.addWidget(rDiabetes2)
+        hboxDiabetes.addWidget(self.rDiabetes1)
+        hboxDiabetes.addWidget(self.rDiabetes2)
         vbox.addLayout(hboxDiabetes)
 
         #hipertenzija
         hboxHipertenzija = QtWidgets.QHBoxLayout()
         lHipertenzija= QLabel("Da li imate hipertenziju (povisen krvni pritisak): ")
-        rHiper1= QtWidgets.QRadioButton("Da")
-        rHiper2= QtWidgets.QRadioButton("Ne")
+        self.rHiper1= QtWidgets.QRadioButton("Da")
+        self.rHiper2= QtWidgets.QRadioButton("Ne")
         grHiper = QtWidgets.QButtonGroup(self)
-        grHiper.addButton(rHiper1)
-        grHiper.addButton(rHiper2)
+        grHiper.addButton(self.rHiper1)
+        grHiper.addButton(self.rHiper2)
         hboxHipertenzija.addWidget(lHipertenzija)
-        hboxHipertenzija.addWidget(rHiper1)
-        hboxHipertenzija.addWidget(rHiper2)
+        hboxHipertenzija.addWidget(self.rHiper1)
+        hboxHipertenzija.addWidget(self.rHiper2)
         vbox.addLayout(hboxHipertenzija)
 
         #hipotenzija
         hboxHipotenzija = QtWidgets.QHBoxLayout()
         lHipotenzija= QLabel("Da li imate hipotenziju (snizen krvni pritisak): ")
-        rHipo1= QtWidgets.QRadioButton("Da")
-        rHipo2= QtWidgets.QRadioButton("Ne")
+        self.rHipo1= QtWidgets.QRadioButton("Da")
+        self.rHipo2= QtWidgets.QRadioButton("Ne")
         grHipo = QtWidgets.QButtonGroup(self)
-        grHipo.addButton(rHipo1)
-        grHipo.addButton(rHipo2)
+        grHipo.addButton(self.rHipo1)
+        grHipo.addButton(self.rHipo2)
         hboxHipotenzija.addWidget(lHipotenzija)
-        hboxHipotenzija.addWidget(rHipo1)
-        hboxHipotenzija.addWidget(rHipo2)
+        hboxHipotenzija.addWidget(self.rHipo1)
+        hboxHipotenzija.addWidget(self.rHipo2)
         vbox.addLayout(hboxHipotenzija)
 
         #astma
         hboxAstma = QtWidgets.QHBoxLayout()
         vboxAstma2= QtWidgets.QVBoxLayout()
         lAstma= QLabel("Da li imate astmu (ako da, koliko cesto): ")
-        rAstma1= QtWidgets.QRadioButton("dnevno vise puta")
-        rAstma2= QtWidgets.QRadioButton("jednom dnevno")
-        rAstma3= QtWidgets.QRadioButton("vise od jednom nedeljno")
-        rAstma4= QtWidgets.QRadioButton("manje od jednom nedeljno")
-        rAstma5= QtWidgets.QRadioButton("nemam uopste")
+        self.rAstma1= QtWidgets.QRadioButton("dnevno vise puta")
+        self.rAstma2= QtWidgets.QRadioButton("jednom dnevno")
+        self.rAstma3= QtWidgets.QRadioButton("vise od jednom nedeljno")
+        self.rAstma4= QtWidgets.QRadioButton("manje od jednom nedeljno")
+        self.rAstma5= QtWidgets.QRadioButton("nemam uopste")
         grAstma = QtWidgets.QButtonGroup(self)
-        grAstma.addButton(rAstma1)
-        grAstma.addButton(rAstma2)
-        grAstma.addButton(rAstma3)
-        grAstma.addButton(rAstma4)
-        grAstma.addButton(rAstma5)
+        grAstma.addButton(self.rAstma1)
+        grAstma.addButton(self.rAstma2)
+        grAstma.addButton(self.rAstma3)
+        grAstma.addButton(self.rAstma4)
+        grAstma.addButton(self.rAstma5)
         hboxAstma.addWidget(lAstma)
-        vboxAstma2.addWidget(rAstma1)
-        vboxAstma2.addWidget(rAstma2)
-        vboxAstma2.addWidget(rAstma3)
-        vboxAstma2.addWidget(rAstma4)
-        vboxAstma2.addWidget(rAstma5)
+        vboxAstma2.addWidget(self.rAstma1)
+        vboxAstma2.addWidget(self.rAstma2)
+        vboxAstma2.addWidget(self.rAstma3)
+        vboxAstma2.addWidget(self.rAstma4)
+        vboxAstma2.addWidget(self.rAstma5)
         hboxAstma.addLayout(vboxAstma2)
         vbox.addLayout(hboxAstma)
 
@@ -153,23 +153,23 @@ class Gui(QtWidgets.QWidget):
         hboxCigarete = QtWidgets.QHBoxLayout()
         vboxCigarete2= QtWidgets.QVBoxLayout()
         lCigarete= QLabel("Da li pusite cigarete (ako da, koliko cigareta dnevno): ")
-        rCig1= QtWidgets.QRadioButton("ne")
-        rCig2= QtWidgets.QRadioButton("od 1 do 5 dnevno")
-        rCig3= QtWidgets.QRadioButton("od 5 do 10 dnevno")
-        rCig4= QtWidgets.QRadioButton("od 10 do 20 dnevno")
-        rCig5= QtWidgets.QRadioButton("vise od 20")
+        self.rCig1= QtWidgets.QRadioButton("ne")
+        self.rCig2= QtWidgets.QRadioButton("od 1 do 5 dnevno")
+        self.rCig3= QtWidgets.QRadioButton("od 5 do 10 dnevno")
+        self.rCig4= QtWidgets.QRadioButton("od 10 do 20 dnevno")
+        self.rCig5= QtWidgets.QRadioButton("vise od 20")
         grCig = QtWidgets.QButtonGroup(self)
-        grCig.addButton(rCig1)
-        grCig.addButton(rCig2)
-        grCig.addButton(rCig3)
-        grCig.addButton(rCig4)
-        grCig.addButton(rCig5)
+        grCig.addButton(self.rCig1)
+        grCig.addButton(self.rCig2)
+        grCig.addButton(self.rCig3)
+        grCig.addButton(self.rCig4)
+        grCig.addButton(self.rCig5)
         hboxCigarete.addWidget(lCigarete)
-        vboxCigarete2.addWidget(rCig1)
-        vboxCigarete2.addWidget(rCig2)
-        vboxCigarete2.addWidget(rCig3)
-        vboxCigarete2.addWidget(rCig4)
-        vboxCigarete2.addWidget(rCig5)
+        vboxCigarete2.addWidget(self.rCig1)
+        vboxCigarete2.addWidget(self.rCig2)
+        vboxCigarete2.addWidget(self.rCig3)
+        vboxCigarete2.addWidget(self.rCig4)
+        vboxCigarete2.addWidget(self.rCig5)
         hboxCigarete.addLayout(vboxCigarete2)
         vbox.addLayout(hboxCigarete)
 
@@ -181,43 +181,43 @@ class Gui(QtWidgets.QWidget):
         #temperatura
         hboxT = QtWidgets.QHBoxLayout()
         ltemp= QLabel("Temperatura: ")
-        rtemp1= QtWidgets.QRadioButton("manje od 37")
-        rtemp2= QtWidgets.QRadioButton("od 37 do 38")
-        rtemp3= QtWidgets.QRadioButton("vise od 38")
+        self.rtemp1= QtWidgets.QRadioButton("manje od 37")
+        self.rtemp2= QtWidgets.QRadioButton("od 37 do 38")
+        self.rtemp3= QtWidgets.QRadioButton("vise od 38")
         bgT = QButtonGroup(self)
-        bgT.addButton(rtemp1)
-        bgT.addButton(rtemp2)
-        bgT.addButton(rtemp3)
+        bgT.addButton(self.rtemp1)
+        bgT.addButton(self.rtemp2)
+        bgT.addButton(self.rtemp3)
         hboxT.addWidget(ltemp)
-        hboxT.addWidget(rtemp1)
-        hboxT.addWidget(rtemp2)
-        hboxT.addWidget(rtemp3)
+        hboxT.addWidget(self.rtemp1)
+        hboxT.addWidget(self.rtemp2)
+        hboxT.addWidget(self.rtemp3)
         vbox.addLayout(hboxT)
         
         #suv kasalj
         hboxSK = QtWidgets.QHBoxLayout()
         lskasalj= QLabel("Suv kasalj: ")
-        rskasalj1= QtWidgets.QRadioButton("Da")
-        rskasalj2= QtWidgets.QRadioButton("Ne")
+        self.rskasalj1= QtWidgets.QRadioButton("Da")
+        self.rskasalj2= QtWidgets.QRadioButton("Ne")
         bgSK = QButtonGroup(self)
-        bgSK.addButton(rskasalj1)
-        bgSK.addButton(rskasalj2)
+        bgSK.addButton(self.rskasalj1)
+        bgSK.addButton(self.rskasalj2)
         hboxSK.addWidget(lskasalj)
-        hboxSK.addWidget(rskasalj1)
-        hboxSK.addWidget(rskasalj2)
+        hboxSK.addWidget(self.rskasalj1)
+        hboxSK.addWidget(self.rskasalj2)
         vbox.addLayout(hboxSK)
 
         #umor
         hboxU = QtWidgets.QHBoxLayout()
         lumor= QLabel("Umor: ")
-        rumor1= QtWidgets.QRadioButton("Da")
-        rumor2= QtWidgets.QRadioButton("Ne")
+        self.rumor1= QtWidgets.QRadioButton("Da")
+        self.rumor2= QtWidgets.QRadioButton("Ne")
         bgU = QButtonGroup(self)
-        bgU.addButton(rumor1)
-        bgU.addButton(rumor2)
+        bgU.addButton(self.rumor1)
+        bgU.addButton(self.rumor2)
         hboxU.addWidget(lumor)
-        hboxU.addWidget(rumor1)
-        hboxU.addWidget(rumor2)
+        hboxU.addWidget(self.rumor1)
+        hboxU.addWidget(self.rumor2)
         vbox.addLayout(hboxU)
 
         self.manje = QLabel("Manje cesti simptomi",self)
@@ -226,72 +226,72 @@ class Gui(QtWidgets.QWidget):
         #bol
         hboxB = QtWidgets.QHBoxLayout()
         lbol = QLabel("Bolovi u misicima: ")
-        rbol1= QtWidgets.QRadioButton("Da")
-        rbol2= QtWidgets.QRadioButton("Ne")
+        self.rbol1= QtWidgets.QRadioButton("Da")
+        self.rbol2= QtWidgets.QRadioButton("Ne")
         bgB = QButtonGroup(self)
-        bgB.addButton(rbol1)
-        bgB.addButton(rbol2)
+        bgB.addButton(self.rbol1)
+        bgB.addButton(self.rbol2)
         hboxB.addWidget(lbol)
-        hboxB.addWidget(rbol1)
-        hboxB.addWidget(rbol2)
+        hboxB.addWidget(self.rbol1)
+        hboxB.addWidget(self.rbol2)
         vbox.addLayout(hboxB)
 
         #upaljeno grlo
         hboxUG = QtWidgets.QHBoxLayout()
         lugrlo = QLabel("Upaljeno grlo: ")
-        rugrlo1= QtWidgets.QRadioButton("Da")
-        rugrlo2= QtWidgets.QRadioButton("Ne")
+        self.rugrlo1= QtWidgets.QRadioButton("Da")
+        self.rugrlo2= QtWidgets.QRadioButton("Ne")
         bgUG = QButtonGroup(self)
-        bgUG.addButton(rugrlo1)
-        bgUG.addButton(rugrlo2)
+        bgUG.addButton(self.rugrlo1)
+        bgUG.addButton(self.rugrlo2)
         hboxUG.addWidget(lugrlo)
-        hboxUG.addWidget(rugrlo1)
-        hboxUG.addWidget(rugrlo2)
+        hboxUG.addWidget(self.rugrlo1)
+        hboxUG.addWidget(self.rugrlo2)
         vbox.addLayout(hboxUG)
 
         #dijareja
         hboxD = QtWidgets.QHBoxLayout()
         ldijareja = QLabel("Dijareja (proliv): ")
-        rdijareja1 = QtWidgets.QRadioButton("Da")
-        rdijareja2 = QtWidgets.QRadioButton("Ne")
+        self.rdijareja1 = QtWidgets.QRadioButton("Da")
+        self.rdijareja2 = QtWidgets.QRadioButton("Ne")
         bgD = QButtonGroup(self)
-        bgD.addButton(rdijareja1)
-        bgD.addButton(rdijareja2)
+        bgD.addButton(self.rdijareja1)
+        bgD.addButton(self.rdijareja2)
         hboxD.addWidget(ldijareja)
-        hboxD.addWidget(rdijareja1)
-        hboxD.addWidget(rdijareja2)
+        hboxD.addWidget(self.rdijareja1)
+        hboxD.addWidget(self.rdijareja2)
         vbox.addLayout(hboxD)
 
         #glavobolja
         hboxG = QtWidgets.QHBoxLayout()
         lglavobolja = QLabel("Glavobolja: ")
-        rglavobolja1 = QtWidgets.QRadioButton("Da")
-        rglavobolja2 = QtWidgets.QRadioButton("Ne")
+        self.rglavobolja1 = QtWidgets.QRadioButton("Da")
+        self.rglavobolja2 = QtWidgets.QRadioButton("Ne")
         bgG = QButtonGroup(self)
-        bgG.addButton(rglavobolja1)
-        bgG.addButton(rglavobolja2)
+        bgG.addButton(self.rglavobolja1)
+        bgG.addButton(self.rglavobolja2)
         hboxG.addWidget(lglavobolja)
-        hboxG.addWidget(rglavobolja1)
-        hboxG.addWidget(rglavobolja2)
+        hboxG.addWidget(self.rglavobolja1)
+        hboxG.addWidget(self.rglavobolja2)
         vbox.addLayout(hboxG)
  
         #gubitak cula
         hboxC = QtWidgets.QHBoxLayout()
         lcula = QLabel("Gubitak cula mirisa ili ukusa: ")
-        rcula1 = QtWidgets.QRadioButton("Cubitak cula mirisa")
-        rcula2 = QtWidgets.QRadioButton("Gubitak cula ukusa")
+        self.rcula1 = QtWidgets.QRadioButton("Cubitak cula mirisa")
+        self.rcula2 = QtWidgets.QRadioButton("Gubitak cula ukusa")
         rcula3 = QtWidgets.QRadioButton("Nije doslo do gubitka cula mirisa ili ukusa")
         bgC1 = QButtonGroup(self)
-        bgC1.addButton(rcula1)
+        bgC1.addButton(self.rcula1)
         bgC2 = QButtonGroup(self)
-        bgC2.addButton(rcula2)
+        bgC2.addButton(self.rcula2)
         bgC3 = QButtonGroup(self)
-        bgC3.addButton(rcula3)
+        bgC3.addButton(self.rcula3)
         
         hboxC.addWidget(lcula)
-        hboxC.addWidget(rcula1)
-        hboxC.addWidget(rcula2)
-        hboxC.addWidget(rcula3)
+        hboxC.addWidget(self.rcula1)
+        hboxC.addWidget(self.rcula2)
+        hboxC.addWidget(self.rcula3)
        # hboxC.addWidget(rgrupa)
         vbox.addLayout(hboxC)
         
@@ -368,136 +368,144 @@ class Gui(QtWidgets.QWidget):
         
     def ukupno(self):
         n=0
-        if rVak1.isChecked():
+        #godine
+        try:
+            broj=int(int(self.tgodine.text())/2)
+            n+=broj
+        except:
+            self.greska()
+        
+        
+        if self.rVak1.isChecked():
             n+=0
-        elif rVak2.isChecked():
+        elif self.rVak2.isChecked():
             n+=5
-        elif rVak3.isChecked():
+        elif self.rVak3.isChecked():
             n+=10
         else:
             self.greska()
         
         
         #alergija
-        if rAlergija1.isChecked():
+        if self.rAlergija1.isChecked():
             n+=5
-        elif rAlergija2.isChecked():
+        elif self.rAlergija2.isChecked():
             n+=5
         #infekcija
-        if rInfekcija1.isChecked():
+        if self.rInfekcija1.isChecked():
             n+=50
-        elif rInfekcija2.isChecked():
+        elif self.rInfekcija2.isChecked():
             n+=30
-        elif rInfekcija3.isChecked():
+        elif self.rInfekcija3.isChecked():
             n+=30
         #diabetes
-        if rDiabetes1.isChecked():
+        if self.rDiabetes1.isChecked():
             n+=40
-        elif rDiabetes2.isChecked():
+        elif self.rDiabetes2.isChecked():
             n+=0
         else: 
             self.greska()
         #hipertenzija
-        if rHiper1.isChecked():
+        if self.rHiper1.isChecked():
             n+=10
-        elif rHiper2.isChecked():
+        elif self.rHiper2.isChecked():
             n+=0
         else: 
             self.greska()
         #hipotenzija
-        if rHipo1.isChecked():
+        if self.rHipo1.isChecked():
             n+=10
-        elif rHipo2.isChecked():
+        elif self.rHipo2.isChecked():
             n+=0
         else: 
             self.greska()
 
         #astma
-        if rAstma1.isChecked():
+        if self.rAstma1.isChecked():
             n+=50
-        elif rAstma2.isChecked():
+        elif self.rAstma2.isChecked():
             n+=40
-        elif rAstma3.isChecked():
+        elif self.rAstma3.isChecked():
             n+=30
-        elif rAstma4.isChecked():
+        elif self.rAstma4.isChecked():
             n+=10
-        elif rAstma5.isChecked():
+        elif self.rAstma5.isChecked():
             n+=0
         else: 
             self.greska()
         
         #cigarete
-        if rCig1.isChecked():
+        if self.rCig1.isChecked():
             n+=0
-        elif rCig2.isChecked():
+        elif self.rCig2.isChecked():
             n+=5
-        elif rCig3.isChecked():
+        elif self.rCig3.isChecked():
             n+=10
-        elif rCig4.isChecked():
+        elif self.rCig4.isChecked():
             n+=15
-        elif rCig5.isChecked():
+        elif self.rCig5.isChecked():
             n+=20
         else: 
             self.greska()
         
         
         
-         if rtemp1.isChecked():
+        if self.rtemp1.isChecked():
             n+=0
-        elif rtemp2.isChecked():
+        elif self.rtemp2.isChecked():
             n+=100
-        elif rtemp3.isChecked():
+        elif self.rtemp3.isChecked():
             n+=50
         else:
             self.greska()
             
-        if rskasalj1.isChecked():
+        if self.rskasalj1.isChecked():
             n+=100
-        elif rskasalj2.isChecked():
+        elif self.rskasalj2.isChecked():
             n+=0
         else:
             self.greska()
             
-        if rumor1.isChecked():
+        if self.rumor1.isChecked():
             n+=100
-        elif rumor2.isChecked():
+        elif self.rumor2.isChecked():
             n+=0
         else:
             self.greska()
             
-        if rbol1.isChecked():
+        if self.rbol1.isChecked():
             n+=50
-        elif rbol2.isChecked():
+        elif self.rbol2.isChecked():
             n+=0 
         else:
             self.greska()
         
-        if rugrlo1.isChecked():
+        if self.rugrlo1.isChecked():
             n+=50
-        elif rugrlo2.isChecked():
+        elif self.rugrlo2.isChecked():
             n+=0 
         else:
             self.greska()
         
-        if rdijareja1.isChecked():
+        if self.rdijareja1.isChecked():
             n+=50
-        elif rdijareja2.isChecked():
+        elif self.rdijareja2.isChecked():
             n+=0 
         else:
             self.greska()
         
-        if rglavobolja1.isChecked():
+        if self.rglavobolja1.isChecked():
             n+=30
-        elif rglavobolja2.isChecked():
+        elif self.rglavobolja2.isChecked():
             n+=0 
         else:
             self.greska()
         
-        if rcula1.isChecked():
+        if self.rcula1.isChecked():
             n+=50
-        elif rcula2.isChecked():
+        elif self.rcula2.isChecked():
             n+=50
-        elif rcula3.isChecked():
+        elif self.rcula3.isChecked():
             n+=0 
         else:
             self.greska()
