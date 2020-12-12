@@ -1,8 +1,8 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QButtonGroup
 from PyQt5.QtGui import QIcon, QPixmap
-from PyQt5.QtCore import QSize
-from PyQt5.QtGui import QImage, QPalette, QBrush
+from PyQt5.QtCore import QSize, QRect
+from PyQt5.QtGui import QImage, QPalette, QBrush, QFont
 
 
 class Gui(QtWidgets.QWidget):
@@ -27,6 +27,7 @@ class Gui(QtWidgets.QWidget):
 
         self.licni = QLabel("LICNI PODACI", self)  
         vbox.addWidget(self.licni)
+        self.licni.setFont(QFont("Comic Sans MS",weight=QFont.Bold))
         
         #ime i prezime
         hboxIme = QtWidgets.QHBoxLayout()
@@ -177,8 +178,10 @@ class Gui(QtWidgets.QWidget):
 
         self.simptomi = QLabel("SIMPTOMI", self)  
         vbox.addWidget(self.simptomi)
+        self.simptomi.setFont(QFont("Comic Sans MS",weight=QFont.Bold))
         self.cesti = QLabel("Najcesci simptomi",self)
-        vbox.addWidget(self.cesti) 
+        vbox.addWidget(self.cesti)
+        self.cesti.setFont(QFont("Arial",weight=QFont.Bold))
 
         #temperatura
         hboxT = QtWidgets.QHBoxLayout()
@@ -224,6 +227,7 @@ class Gui(QtWidgets.QWidget):
 
         self.manje = QLabel("Manje cesti simptomi",self)
         vbox.addWidget(self.manje)
+        self.manje.setFont(QFont("Arial",weight=QFont.Bold))
 
         #bol
         hboxB = QtWidgets.QHBoxLayout()
@@ -300,6 +304,7 @@ class Gui(QtWidgets.QWidget):
         #teski simptomi
         lteski = QtWidgets.QLabel("Teski simptomi")
         vbox.addWidget(lteski)
+        lteski.setFont(QFont("Arial",weight=QFont.Bold))
 
         hboxDisanje = QtWidgets.QHBoxLayout()
         ldisanje = QtWidgets.QLabel("Teskoce pri disanju ili nedostatak daha: ")
@@ -328,6 +333,7 @@ class Gui(QtWidgets.QWidget):
         #kontakti
         lkont = QtWidgets.QLabel("KONTAKTI")
         vbox.addWidget(lkont)
+        lkont.setFont(QFont("Comic Sans MS",weight=QFont.Bold))
 
         hboxPoz = QtWidgets.QHBoxLayout()
         lpoz = QtWidgets.QLabel("Da li ste bili u kontaktu sa osobom koja je pozitivna na Covid-19? ")
