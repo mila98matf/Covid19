@@ -536,7 +536,7 @@ class Gui(QtWidgets.QWidget):
         else:
             self.greska("simptomi")
 
-       if n>=300:
+        if n>=300:
             self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, savetujemo Vam da se javite lekaru radi dalje kontrole i lecenja jer postoje indicije da ste zarazeni virusom COVID-19!")
         elif n>=70:
             self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, nije neophodno obracanje lekaru radi daljeg lecenja, vec je dovoljno da ostanete kod kuce, uzimate vitamine, cuvate svoje zdravlje i izbegavate kontakt sa drugim ljudima.")
@@ -551,7 +551,7 @@ class Gui(QtWidgets.QWidget):
         alert.move(250,250)
         alert.exec_()
         
-     def preporucujemo(self, naziv):
+    def preporucujemo(self, naziv):
         alert=QtWidgets.QMessageBox()
         alert.setWindowTitle("Preporucujemo")
         alert.setText(naziv)
