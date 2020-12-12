@@ -377,7 +377,8 @@ class Gui(QtWidgets.QWidget):
             broj=int(self.tGodine.text())/2
             n+=broj
         except:
-            self.greska("niste uneli godine")
+            self.greska("Pogresno unete godine")
+            return
         
         
         if self.rVak1.isChecked():
@@ -387,7 +388,8 @@ class Gui(QtWidgets.QWidget):
         elif self.rVak3.isChecked():
             n+=10
         else:
-            self.greska("niste uneli da li ste vakcinisani")
+            self.greska("Niste uneli podatke o vakcinaciji")
+            return
         
         
         #alergija
@@ -408,21 +410,24 @@ class Gui(QtWidgets.QWidget):
         elif self.rDiabetes2.isChecked():
             n+=0
         else: 
-            self.greska("diabetes")
+            self.greska("Niste uneli podatke o diabetesu")
+            return
         #hipertenzija
         if self.rHiper1.isChecked():
             n+=10
         elif self.rHiper2.isChecked():
             n+=0
         else: 
-            self.greska("hipertenzija")
+            self.greska("Niste uneli podatke o hipertenziji")
+            return
         #hipotenzija
         if self.rHipo1.isChecked():
             n+=10
         elif self.rHipo2.isChecked():
             n+=0
         else: 
-            self.greska("hipotenzija")
+            self.greska("Niste uneli podatke o hipotenziji")
+            return
 
         #astma
         if self.rAstma1.isChecked():
@@ -436,7 +441,8 @@ class Gui(QtWidgets.QWidget):
         elif self.rAstma5.isChecked():
             n+=0
         else: 
-            self.greska("astma")
+            self.greska("Niste uneli podatke o astmi")
+            return
         
         #cigarete
         if self.rCig1.isChecked():
@@ -450,7 +456,8 @@ class Gui(QtWidgets.QWidget):
         elif self.rCig5.isChecked():
             n+=20
         else: 
-            self.greska("cigarete")
+            self.greska("Niste uneli podatke o pusenju")
+            return
         
         
         
@@ -461,49 +468,56 @@ class Gui(QtWidgets.QWidget):
         elif self.rtemp3.isChecked():
             n+=50
         else:
-            self.greska("temper")
+            self.greska("Niste uneli podatke o temperaturi")
+            return
             
         if self.rskasalj1.isChecked():
             n+=100
         elif self.rskasalj2.isChecked():
             n+=0
         else:
-            self.greska("kasalj")
+            self.greska("Niste uneli podatke o kaslju")
+            return
             
         if self.rumor1.isChecked():
             n+=100
         elif self.rumor2.isChecked():
             n+=0
         else:
-            self.greska("umor")
+            self.greska("Niste uneli podatke o umoru")
+            return
             
         if self.rbol1.isChecked():
             n+=50
         elif self.rbol2.isChecked():
             n+=0 
         else:
-            self.greska("bol")
+            self.greska("Niste uneli podatke o bolu")
+            return
         
         if self.rugrlo1.isChecked():
             n+=50
         elif self.rugrlo2.isChecked():
             n+=0 
         else:
-            self.greska("grlo")
+            self.greska("Niste uneli podatke o grlu")
+            return
         
         if self.rdijareja1.isChecked():
             n+=50
         elif self.rdijareja2.isChecked():
             n+=0 
         else:
-            self.greska("dijare")
+            self.greska("Niste uneli podatke o dijareji")
+            return
         
         if self.rglavobolja1.isChecked():
             n+=30
         elif self.rglavobolja2.isChecked():
             n+=0 
         else:
-            self.greska("glavob")
+            self.greska("Niste uneli podatke o glavobolji")
+            return
         
         if self.rcula1.isChecked():
             n+=50
@@ -512,21 +526,24 @@ class Gui(QtWidgets.QWidget):
         elif self.rcula3.isChecked():
             n+=0 
         else:
-            self.greska("cula")
+            self.greska("Niste uneli podatke o gubitku cula")
+            return
         #teski
         if self.rbDisanje1.isChecked():
             n+=150
         elif self.rbDisanje2.isChecked():
             n+=0
         else:
-            self.greska("disanje")
+            self.greska("Niste uneli podatke o otezanom disanju")
+            return
         
         if self.rbPritisak1.isChecked():
             n+=150
         elif self.rbPritisak2.isChecked():
             n+=0
         else:
-            self.greska("pritisak")
+            self.greska("Niste uneli podatke o pritisku")
+            return
 
         #kontakti
         if self.rbPoz1.isChecked():
@@ -534,14 +551,16 @@ class Gui(QtWidgets.QWidget):
         elif self.rbPoz2.isChecked():
             n+=0
         else:
-            self.greska("kontakti")
+            self.greska("Niste uneli podatke o kontaktima")
+            return
 
         if self.rbSim1.isChecked():
             n+=200
         elif self.rbSim2.isChecked():
             n+=0
         else:
-            self.greska("simptomi")
+            self.greska("Niste uneli podatke o kontaktima")
+            return
 
         if n>=300:
             self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, savetujemo Vam da se javite lekaru radi dalje kontrole i lecenja jer postoje indicije da ste zarazeni virusom COVID-19!")
