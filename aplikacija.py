@@ -369,7 +369,65 @@ class Gui(QtWidgets.QWidget):
         
     def ukupno(self):
         n=0
-
+         if rtemp1.isChecked():
+            n+=0
+        elif rtemp2.isChecked():
+            n+=100
+        elif rtemp3.isChecked():
+            n+=50
+        else:
+            self.greska()
+            
+        if rskasalj1.isChecked():
+            n+=100
+        elif rskasalj2.isChecked():
+            n+=0
+        else:
+            self.greska()
+            
+        if rumor1.isChecked():
+            n+=100
+        elif rumor2.isChecked():
+            n+=0
+        else:
+            self.greska()
+            
+        if rbol1.isChecked():
+            n+=50
+        elif rbol2.isChecked():
+            n+=0 
+        else:
+            self.greska()
+        
+        if rugrlo1.isChecked():
+            n+=50
+        elif rugrlo2.isChecked():
+            n+=0 
+        else:
+            self.greska()
+        
+        if rdijareja1.isChecked():
+            n+=50
+        elif rdijareja2.isChecked():
+            n+=0 
+        else:
+            self.greska()
+        
+        if rglavobolja1.isChecked():
+            n+=30
+        elif rglavobolja2.isChecked():
+            n+=0 
+        else:
+            self.greska()
+        
+        if rcula1.isChecked():
+            n+=50
+        elif rcula2.isChecked():
+            n+=50
+        elif rcula3.isChecked():
+            n+=0 
+        else:
+            self.greska()
         #teski
         if rbDisanje1.isChecked():
             n+=150
