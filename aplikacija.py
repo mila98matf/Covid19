@@ -364,6 +364,56 @@ class Gui(QtWidgets.QWidget):
         leprocena.resize(900,100)
         vbox.addWidget(lprocena)
         vbox.addWidget(leprocena)
+        
+        pbGotovo.clicked.connect(self.ukupno)
+        
+    def ukupno(self):
+        n=0
+
+        #teski
+        if rbDisanje1.isChecked():
+            n+=150
+        elif rbDisanje2.isChecked():
+            n+=0
+        else:
+            self.greska()
+        
+        if rbPritisak1.isChecked():
+            n+=150
+        elif rbPritisak2.isChecked():
+            n+=0
+        else:
+            self.greska()
+
+        #kontakti
+        if rbPoz1.isChecked():
+            n+=200
+        elif rbPoz2.isChecked():
+            n+=0
+        else:
+            self.greska()
+
+        if rbSim1.isChecked():
+            n+=200
+        elif rbSim2.isChecked():
+            n+=0
+        else:
+            self.greska()
+
+        if n>=300:
+            leprocena.setText("Doktor")
+        elif n>=70:
+            leprocena.setText("Kucno")
+        else:
+            leprocena.setText("OK")
+        
+    
+    def greska(self):
+        alert=QtWidgets.QMessageBox()
+        alert.setWindowTitle("Poruka")
+        alert.setText("Neispravan unos")
+        alert.move(250,250)
+        alert.exec_()
 
 
 app = QtWidgets.QApplication([])
