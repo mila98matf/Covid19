@@ -582,15 +582,15 @@ class Gui(QtWidgets.QWidget):
         self.rDiabetes2.setChecked(False)
         self.grDiabetes.setExclusive(True)
 
-        self.grHipertenzija.setExclusive(False)
+        self.grHiper.setExclusive(False)
         self.rHiper1.setChecked(False)
         self.rHiper2.setChecked(False)
-        self.grHipertenzija.setExclusive(True)
+        self.grHiper.setExclusive(True)
 
-        self.grHipotenzija.setExclusive(False)
+        self.grHipo.setExclusive(False)
         self.rHipo1.setChecked(False)
         self.rHipo2.setChecked(False)
-        self.grHipotenzija.setExclusive(True)
+        self.grHipo.setExclusive(True)
 
         self.grAstma.setExclusive(False)
         self.rAstma1.setChecked(False)
