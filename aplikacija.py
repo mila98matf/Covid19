@@ -608,7 +608,51 @@ class Gui(QtWidgets.QWidget):
         self.rCig5.setChecked(False)
         self.grCig.setExclusive(True)
         
-        #ovde dodati Jovanin deo
+        self.bgT.setExclusive(False)
+        self.rtemp1.setChecked(False)
+        self.rtemp2.setChecked(False)
+        self.rtemp3.setChecked(False)
+        self.bgT.setExclusive(True)
+
+        self.bgSK.setExclusive(False)
+        self.rskasalj1.setChecked(False)
+        self.rskasalj2.setChecked(False)
+        self.bgSK.setExclusive(True)
+
+        self.bgU.setExclusive(False)
+        self.rumor1.setChecked(False)
+        self.rumor2.setChecked(False)
+        self.bgU.setExclusive(True)
+        
+        self.bgB.setExclusive(False)
+        self.rbol1.setChecked(False)
+        self.rbol2.setChecked(False)
+        self.bgB.setExclusive(True)
+
+        self.bgUG.setExclusive(False)
+        self.rugrlo1.setChecked(False)
+        self.rugrlo2.setChecked(False)
+        self.bgUG.setExclusive(True)
+
+        self.bgD.setExclusive(False)
+        self.rdijareja1.setChecked(False)
+        self.rdijareja2.setChecked(False)
+        self.bgD.setExclusive(True)
+        
+        self.bgG.setExclusive(False)
+        self.rglavobolja1.setChecked(False)
+        self.rglavobolja2.setChecked(False)
+        self.bgG.setExclusive(True)
+
+        self.bgC1.setExclusive(False)
+        self.rcula1.setChecked(False)
+        self.bgC1.setExclusive(True)
+        self.bgC2.setExclusive(False)
+        self.rcula2.setChecked(False)
+        self.bgC2.setExclusive(True)
+        self.bgC3.setExclusive(False)
+        self.rcula3.setChecked(False)
+        self.bgC3.setExclusive(True)
 
         self.grDisanje.setExclusive(False)
         self.rbDisanje1.setChecked(False)
