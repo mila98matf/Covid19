@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QButtonGroup
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import QSize, QRect
 from PyQt5.QtGui import QImage, QPalette, QBrush, QFont
+from datetime import datetime
+import csv
 
 
 class Gui(QtWidgets.QWidget):
@@ -14,6 +16,11 @@ class Gui(QtWidgets.QWidget):
     def initGui(self):
         self.setGeometry(0,0,1000,1000)
         self.setWindowTitle('Covid-19')
+
+        f=open("podaci.csv","w",newline="")
+        w=csv.writer(f)
+        w.writerow(["jmbg","ime i prezime","datum","anamneza"])
+        f.close()
         
         vbox = QtWidgets.QVBoxLayout()
         self.setLayout(vbox)
@@ -380,6 +387,27 @@ class Gui(QtWidgets.QWidget):
         
     def ukupno(self):
         n=0
+
+        #ime
+        try:
+            ime=self.time.text()
+            if ime=="":
+                self.greska("Nije uneto ime i prezime")
+                return
+        except:
+            self.greska("Pogresno uneto ime")
+            return
+
+        #jmbg
+        try:
+            jmbg=self.tjmbg.text()
+            if jmbg=="":
+                self.greska("Nije unet JMBG")
+                return
+        except:
+            self.greska("Pogresno unet JMBG")
+            return
+
         #godine
         try:
             broj=int(self.tGodine.text())/2
@@ -570,16 +598,25 @@ class Gui(QtWidgets.QWidget):
             self.greska("Niste uneli podatke o kontaktima")
             return
 
+        file=open("podaci.csv","a",newline="")
+        wr=csv.writer(file)
+
         if n>=300:
             self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, savetujemo Vam da se javite lekaru radi dalje kontrole i lecenja jer postoje indicije da ste zarazeni virusom COVID-19!")
+            wr.writerow([jmbg,ime,datetime.now().date(),"doktor"])
         elif n>=70:
             self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, nije neophodno obracanje lekaru radi daljeg lecenja, vec je dovoljno da ostanete kod kuce, uzimate vitamine, cuvate svoje zdravlje i izbegavate kontakt sa drugim ljudima.")
+            wr.writerow([jmbg,ime,datetime.now().date(),"kucno lecenje"])
         else:
             self.preporucujemo("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, ne postoje indicije da ste zarazeni virusom COVID-19, zdravlje Vam je stabilno, ali zarad sigurnosti Vas i ljudi u Vasem okruzenju, cuvajte svoje zdravlje i budite odgovorni! ")
-        
+            wr.writerow([jmbg,ime,datetime.now().date(),"zdrav"])
+
+        file.close()
+
     def brisi(self):
         self.tGodine.setText("")
         self.time.setText("")
+        self.tjmbg.setText("")
 
         self.grVak.setExclusive(False)
         self.rVak1.setChecked(False)
