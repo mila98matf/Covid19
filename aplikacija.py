@@ -13,6 +13,7 @@ class Gui(QtWidgets.QWidget):
 
     def initGui(self):
         self.setGeometry(0,0,1000,1000)
+        self.setWindowTitle('Covid-19')
         
         vbox = QtWidgets.QVBoxLayout()
         self.setLayout(vbox)
@@ -131,6 +132,64 @@ class Gui(QtWidgets.QWidget):
         hboxC.addWidget(rcula3)
        # hboxC.addWidget(rgrupa)
         vbox.addLayout(hboxC)
+        
+        #teski simptomi
+        lteski = QtWidgets.QLabel("TEŠKI SIMPTOMI")
+        vbox.addWidget(lteski)
+
+        hboxDisanje = QtWidgets.QHBoxLayout()
+        ldisanje = QtWidgets.QLabel("Teškoće pri disanju ili nedostatak daha: ")
+        rbDisanje1 = QtWidgets.QRadioButton("da")
+        rbDisanje2 = QtWidgets.QRadioButton("ne")
+        hboxDisanje.addWidget(ldisanje)
+        hboxDisanje.addWidget(rbDisanje1)
+        hboxDisanje.addWidget(rbDisanje2)
+        vbox.addLayout(hboxDisanje)
+
+        hboxPritisak = QtWidgets.QHBoxLayout()
+        lpritisak = QtWidgets.QLabel("Bol ili pritisak u grudima: ")
+        rbPritisak1 = QtWidgets.QRadioButton("da")
+        rbPritisak2 = QtWidgets.QRadioButton("ne")
+        hboxPritisak.addWidget(lpritisak)
+        hboxPritisak.addWidget(rbPritisak1)
+        hboxPritisak.addWidget(rbPritisak2)
+        vbox.addLayout(hboxPritisak)
+
+        #kontakti
+        lkont = QtWidgets.QLabel("KONTAKTI")
+        vbox.addWidget(lkont)
+
+        hboxPoz = QtWidgets.QHBoxLayout()
+        lpoz = QtWidgets.QLabel("Da li ste bili u kontaktu sa osobom koja je pozitivna na Covid-19? ")
+        rbPoz1 = QtWidgets.QRadioButton("da")
+        rbPoz2 = QtWidgets.QRadioButton("ne")
+        hboxPoz.addWidget(lpoz)
+        hboxPoz.addWidget(rbPoz1)
+        hboxPoz.addWidget(rbPoz2)
+        vbox.addLayout(hboxPoz)
+
+        hboxSim = QtWidgets.QHBoxLayout()
+        lsim = QtWidgets.QLabel("Da li ste bili u kontaktu sa osobom koja\n ima simptome Covida-19 ali se nije testirala? ")
+        rbSim1 = QtWidgets.QRadioButton("da")
+        rbSim2 = QtWidgets.QRadioButton("ne")
+        hboxSim.addWidget(lsim)
+        hboxSim.addWidget(rbSim1)
+        hboxSim.addWidget(rbSim2)
+        vbox.addLayout(hboxSim)
+
+        #kraj
+        hboxKraj = QtWidgets.QHBoxLayout()
+        pbGotovo = QtWidgets.QPushButton("Gotovo")
+        pbPonovo = QtWidgets.QPushButton("Počni ispočetka")
+        hboxKraj.addWidget(pbGotovo)
+        hboxKraj.addWidget(pbPonovo)
+        vbox.addLayout(hboxKraj)
+
+        lprocena = QtWidgets.QLabel("Procena: ")
+        leprocena = QtWidgets.QLineEdit()
+        leprocena.resize(900,100)
+        vbox.addWidget(lprocena)
+        vbox.addWidget(leprocena)
 
 
 app = QtWidgets.QApplication([])
