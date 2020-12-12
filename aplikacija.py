@@ -565,7 +565,7 @@ class Gui(QtWidgets.QWidget):
         self.grAlergija1.setExclusive(True)
         self.grAlergija2.setExclusive(False)
         self.rAlergija2.setChecked(False)
-        self.grAlergija2(True)
+        self.grAlergija2.setExclusive(True)
 
         self.grInfekcija1.setExclusive(False)
         self.rInfekcija1.setChecked(False)
