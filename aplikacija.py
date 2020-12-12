@@ -37,6 +37,14 @@ class Gui(QtWidgets.QWidget):
         hboxIme.addWidget(self.time)
         vbox.addLayout(hboxIme)
         
+        #jmbg
+        hboxJMBG = QtWidgets.QHBoxLayout()
+        ljmbg= QLabel("Uneti JMBG: ")
+        self.tjmbg= QtWidgets.QLineEdit()
+        hboxJMBG.addWidget(ljmbg)
+        hboxJMBG.addWidget(self.tjmbg)
+        vbox.addLayout(hboxJMBG)
+        
         #goidne
         hbox1 = QtWidgets.QHBoxLayout()
         lGodine= QLabel("Uneti broj godina: ")
