@@ -28,6 +28,14 @@ class Gui(QtWidgets.QWidget):
         self.licni = QLabel("LICNI PODACI", self)  
         vbox.addWidget(self.licni)
         
+        #ime i prezime
+        hboxIme = QtWidgets.QHBoxLayout()
+        lime= QLabel("Uneti ime i prezime: ")
+        self.time= QtWidgets.QLineEdit()
+        hboxIme.addWidget(lime)
+        hboxIme.addWidget(self.time)
+        vbox.addLayout(hboxIme)
+        
         #goidne
         hbox1 = QtWidgets.QHBoxLayout()
         lGodine= QLabel("Uneti broj godina: ")
@@ -534,11 +542,11 @@ class Gui(QtWidgets.QWidget):
             self.greska("simptomi")
 
         if n>=300:
-            self.leprocena.setText("Doktor")
+            self.leprocena.setText("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, savetujemo Vam da se javite lekaru radi dalje kontrole i lecenja jer postoje indicije da ste zarazeni virusom COVID-19!")
         elif n>=70:
-            self.leprocena.setText("Kucno")
+            self.leprocena.setText("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, nije neophodno obracanje lekaru radi daljeg lecenja, vec je dovoljno da ostanete kod kuce, uzimate vitamine, cuvate svoje zdravlje i izbegavate kontakt sa drugim ljudima.")
         else:
-            self.leprocena.setText("OK")
+            self.leprocena.setText("Na osnovu licnih podataka, bolesti od kojih bolujete i simptoma koje ste uneli, ne postoje indicije da ste zarazeni virusom COVID-19, zdravlje Vam je stabilno, ali zarad sigurnosti Vas i ljudi u Vasem okruzenju, cuvajte svoje zdravlje i budite odgovorni! ")
         
     
     def greska(self, naziv):
