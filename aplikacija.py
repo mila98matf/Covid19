@@ -370,10 +370,10 @@ class Gui(QtWidgets.QWidget):
         n=0
         #godine
         try:
-            broj=int(int(self.tgodine.text())/2)
+            broj=int(self.tGodine.text())/2
             n+=broj
         except:
-            self.greska()
+            self.greska("niste uneli godine")
         
         
         if self.rVak1.isChecked():
@@ -383,7 +383,7 @@ class Gui(QtWidgets.QWidget):
         elif self.rVak3.isChecked():
             n+=10
         else:
-            self.greska()
+            self.greska("niste uneli da li ste vakcinisani")
         
         
         #alergija
@@ -404,21 +404,21 @@ class Gui(QtWidgets.QWidget):
         elif self.rDiabetes2.isChecked():
             n+=0
         else: 
-            self.greska()
+            self.greska("diabetes")
         #hipertenzija
         if self.rHiper1.isChecked():
             n+=10
         elif self.rHiper2.isChecked():
             n+=0
         else: 
-            self.greska()
+            self.greska("hipertenzija")
         #hipotenzija
         if self.rHipo1.isChecked():
             n+=10
         elif self.rHipo2.isChecked():
             n+=0
         else: 
-            self.greska()
+            self.greska("hipotenzija")
 
         #astma
         if self.rAstma1.isChecked():
@@ -432,7 +432,7 @@ class Gui(QtWidgets.QWidget):
         elif self.rAstma5.isChecked():
             n+=0
         else: 
-            self.greska()
+            self.greska("astma")
         
         #cigarete
         if self.rCig1.isChecked():
@@ -446,7 +446,7 @@ class Gui(QtWidgets.QWidget):
         elif self.rCig5.isChecked():
             n+=20
         else: 
-            self.greska()
+            self.greska("cigarete")
         
         
         
@@ -457,49 +457,49 @@ class Gui(QtWidgets.QWidget):
         elif self.rtemp3.isChecked():
             n+=50
         else:
-            self.greska()
+            self.greska("temper")
             
         if self.rskasalj1.isChecked():
             n+=100
         elif self.rskasalj2.isChecked():
             n+=0
         else:
-            self.greska()
+            self.greska("kasalj")
             
         if self.rumor1.isChecked():
             n+=100
         elif self.rumor2.isChecked():
             n+=0
         else:
-            self.greska()
+            self.greska("umor")
             
         if self.rbol1.isChecked():
             n+=50
         elif self.rbol2.isChecked():
             n+=0 
         else:
-            self.greska()
+            self.greska("bol")
         
         if self.rugrlo1.isChecked():
             n+=50
         elif self.rugrlo2.isChecked():
             n+=0 
         else:
-            self.greska()
+            self.greska("grlo")
         
         if self.rdijareja1.isChecked():
             n+=50
         elif self.rdijareja2.isChecked():
             n+=0 
         else:
-            self.greska()
+            self.greska("dijare")
         
         if self.rglavobolja1.isChecked():
             n+=30
         elif self.rglavobolja2.isChecked():
             n+=0 
         else:
-            self.greska()
+            self.greska("glavob")
         
         if self.rcula1.isChecked():
             n+=50
@@ -508,21 +508,21 @@ class Gui(QtWidgets.QWidget):
         elif self.rcula3.isChecked():
             n+=0 
         else:
-            self.greska()
+            self.greska("cula")
         #teski
         if self.rbDisanje1.isChecked():
             n+=150
         elif self.rbDisanje2.isChecked():
             n+=0
         else:
-            self.greska()
+            self.greska("disanje")
         
         if self.rbPritisak1.isChecked():
             n+=150
         elif self.rbPritisak2.isChecked():
             n+=0
         else:
-            self.greska()
+            self.greska("pritisak")
 
         #kontakti
         if self.rbPoz1.isChecked():
@@ -530,14 +530,14 @@ class Gui(QtWidgets.QWidget):
         elif self.rbPoz2.isChecked():
             n+=0
         else:
-            self.greska()
+            self.greska("kontakti")
 
         if self.rbSim1.isChecked():
             n+=200
         elif self.rbSim2.isChecked():
             n+=0
         else:
-            self.greska()
+            self.greska("simptomi")
 
         if n>=300:
             self.leprocena.setText("Doktor")
@@ -547,10 +547,10 @@ class Gui(QtWidgets.QWidget):
             self.leprocena.setText("OK")
         
     
-    def greska(self):
+    def greska(self, naziv):
         alert=QtWidgets.QMessageBox()
         alert.setWindowTitle("Poruka")
-        alert.setText("Neispravan unos")
+        alert.setText(naziv)
         alert.move(250,250)
         alert.exec_()
 
